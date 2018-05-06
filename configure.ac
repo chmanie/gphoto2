@@ -59,7 +59,6 @@ GP_GETTEXT_HACK([],[Lutz Müller and others],[${MAIL_GPHOTO_TRANSLATION}])
 ALL_LINGUAS="az cs da de en_GB es eu fi fr hu id is it ja nl pa pl pt_BR ro ru rw sk sr sv uk vi zh_CN zh_TW"
 AM_GNU_GETTEXT_VERSION([0.14.1])
 AM_GNU_GETTEXT([external])
-AM_PO_SUBDIRS()
 AM_ICONV()
 GP_GETTEXT_FLAGS()
 
@@ -89,7 +88,7 @@ AC_CHECK_LIB(m,floor)
 
 
 dnl ---------------------------------------------------------------------------
-dnl pthread: The gphoto2 shell (--shell) keeps up a connection to the 
+dnl pthread: The gphoto2 shell (--shell) keeps up a connection to the
 dnl          camera. Some cameras need to be sent keep-alive-messages
 dnl          in order to prevent a shut-down. This is what we need
 dnl          pthread for.
@@ -106,7 +105,7 @@ if $try_pthread; then
                     AC_DEFINE(HAVE_PTHREAD,1,[Define if we use pthread.h.])
                     pthread_msg="yes (-lpthread)"
                     PTHREAD_LIBS="-lpthread"],[
-                    AC_CHECK_LIB(c_r, pthread_create, [ 
+                    AC_CHECK_LIB(c_r, pthread_create, [
                         AC_DEFINE(HAVE_PTHREAD,1,[Define if we use pthread.h.])
                         pthread_msg="yes (-pthread)"
                         PTHREAD_LIBS="-pthread"
@@ -276,7 +275,7 @@ GP_CONFIG_MSG([JPEG support],[$jpeg_msg])
 dnl ---------------------------------------------------------------------------
 dnl libexif: The CameraFilesystem can use libexif for extracting thumbnails
 dnl          out of EXIF data. Similarly, it can extract the mtime of
-dnl          a file. 
+dnl          a file.
 dnl          libexif is available from
 dnl          http://www.sourceforge.net/projects/libexif
 dnl ---------------------------------------------------------------------------
@@ -340,7 +339,7 @@ GP_CHECK_POPT([mandatory])
 
 dnl ---------------------------------------------------------------------------
 dnl readline: Readline is pretty cool - it allows you to use <tab> to complete
-dnl           commands in the gphoto2 shell or to use <up> or <down> to 
+dnl           commands in the gphoto2 shell or to use <up> or <down> to
 dnl           navigate through the history.
 dnl ---------------------------------------------------------------------------
 rl_msg="no (http://cnswww.cns.cwru.edu/~chet/readline/rltop.html)"
@@ -407,7 +406,7 @@ AC_SUBST([AM_LDFLAGS])
 # Create output files
 # ---------------------------------------------------------------------------
 AC_CONFIG_FILES([
-po/Makefile.in 
+po/Makefile.in
 Makefile
 gphoto2/Makefile
 gphoto-m4/Makefile
